@@ -2,7 +2,7 @@ const http = require("http");
 
 http
   .createServer((req, res) => {
-    // console.log(req);
+    console.log(req);
 
     if (req.url == "/") {
       res.writeHead(200, { "content-type": "text/html" });
