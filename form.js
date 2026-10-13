@@ -25,24 +25,24 @@ http
 const http = require("http");
 const fs = require("fs");
 
-http
-  .createServer((req, res) => {
-    fs.readFile("./html/form.html", "utf-8", (err, data) => {
-      if (err) {
-        res.writeHead(500, { "content-type": "text/plain" });
-        res.write(`internal surver Errror`);
-        res.end();
-        return;
-      }
+// http
+//   .createServer((req, res) => {
+//     fs.readFile("./html/form.html", "utf-8", (err, data) => {
+//       if (err) {
+//         res.writeHead(500, { "content-type": "text/plain" });
+//         res.write(`internal surver Errror`);
+//         res.end();
+//         return;
+//       }
 
-      if (req.url == "/") {
-        res.writeHead(200, { "content-type": "text/html" });
-        res.write(data);
-      } else if (req.url == "/submit") {
-        res.write(`<h1>Form Submitted Succucessfully</h1>`);
-      }
+//       if (req.url == "/") {
+//         res.writeHead(200, { "content-type": "text/html" });
+//         res.write(data);
+//       } else if (req.url == "/submit") {
+//         res.write(`<h1>Form Submitted Succucessfully</h1>`);
+//       }
 
-      res.end();
-    });
-  })
-  .listen(4100);
+//       res.end();
+//     });
+//   })
+//   .listen(4100);
